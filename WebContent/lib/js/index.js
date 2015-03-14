@@ -44,6 +44,16 @@ function validate_required(field, alerttxt) {
 		}
 	}
 }
+function compare(field1,field2, alerttxt) {
+	with (field1&&field2) {
+		if (r.test(field1.value) == true &&r.test(field2.value) == true&&(field1.value<=field2.value)) {
+			alert(alerttxt);
+			return false
+		} else {
+			return true
+		}
+	}
+}
 
 function validate_form(thisform) {
 	with (thisform) {
@@ -76,6 +86,11 @@ function validate_form(thisform) {
 			drawPlayers.focus();
 			return false
 		}
+		if (compare(playernumbers,drawPlayers,
+		"Draw Player numbers can not be equal with or larger than player numbers") == false) {
+	drawPlayers.focus();
+	return false
+}
 	}
 
 }

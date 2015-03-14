@@ -43,20 +43,24 @@
 		
 			<input id="clean" type="button" value="clean and redraw" onclick="clean()" style="visibility: hidden;" />
 			<div id="guess" style="visibility: hidden;">
-			Guess what he is drawing:<input type="text" name="2" id="check" cols="10" rows="1" size="15" />
-			<input type="button" value="check" name="2" cols="10" rows="1" size="15" onclick="check()"/>
-			</div>
-			 <p > Edit your nickname: </p>  <input type="text" name="2" id="2" cols="10" rows="1" size="15" value ="Anonymous<%=i %>" onchange="sendClientName()"/>
+			Guess what he is drawing:<input type="text" name="2" id="check" cols="10" rows="1" size="15" onkeydown="if(event.keyCode==13){check(); return false;}" />
 			
+			<input type="button" value="check" name="2" cols="10" rows="1" size="15" onclick="check()"/>
 			</div>
 			
 			<div style="clear:both">
 			<div  align="left" id="messages" style="height: 100px;background: white  url(./lib/images/1.jpeg) repeat scroll; overflow: auto" style="float:left" >
 			<div id="messages" style="width: 2px; height: 1000px; overflow: auto"></div>
 		</div>
+		
+		
+		<div>
+			 Edit your nickname: <input type="text" name="2" id="2" cols="10" rows="1" size="15" value ="Anonymous<%=i %>" onchange="sendClientName()"/>
+			
+			</div>
 			<div style="float:center">
 			
-			<textarea name="1" id="1" cols="40" rows="4" onkeydown="if(event.keyCode==13){sendMessage(); return false;}"></textarea>
+			<textarea name="1" id="1" cols="50" rows="2" onkeydown="if(event.keyCode==13){sendMessage(); return false;}"></textarea>
 			<input type="submit" value="send" onclick="sendMessage()" />
 		<p id = "communication"></p>
 	

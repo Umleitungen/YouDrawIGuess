@@ -9,6 +9,7 @@ import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,6 +23,8 @@ import javax.websocket.Session;
 import javax.websocket.OnMessage;
 
 import org.w3c.dom.*;
+
+import com.sun.glass.ui.Application;
 
 import javax.xml.parsers.*;
 
@@ -62,6 +65,9 @@ public class Server extends HttpServlet {
 		drawPlayers =Integer.parseInt(request.getParameter("drawPlayers"));
 		request.getSession().setAttribute("wantpalyernumbers", wantplayernumbers);
 		request.getSession().setAttribute("drawPlayers", drawPlayers);
+		ServletContext application=this.getServletContext();
+		application.setAttribute("wantpalyernumbers", wantplayernumbers);
+		application.setAttribute("drawPlayers", drawPlayers);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/game.jsp");
 		dispatcher .forward(request, response);
 

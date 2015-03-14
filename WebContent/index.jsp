@@ -15,10 +15,10 @@
 			onsubmit="return validate_form(this)">
 			The numbers of players: <input type="text" name="playernumbers"
 				id="playernumbers"
-				value="<%=session.getAttribute("wantpalyernumbers")%>" size="3" />
+				value="<%=application.getAttribute("wantpalyernumbers")%>" size="3" />
 			([2-10] is avaliable) The numbers of drawers: <input type="text"
 				name="drawPlayers" id="drawPlayers"
-				value="<%=session.getAttribute("drawPlayers")%>" size="3" />
+				value="<%=application.getAttribute("drawPlayers")%>" size="3" />
 			([1-2] is avaliable)<br> <input type="submit" id="submit"
 				value="Submit" />
 		</form>
