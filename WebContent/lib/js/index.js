@@ -44,9 +44,10 @@ function validate_required(field, alerttxt) {
 		}
 	}
 }
-function compare(field1,field2, alerttxt) {
-	with (field1&&field2) {
-		if (r.test(field1.value) == true &&r.test(field2.value) == true&&(field1.value<=field2.value)) {
+function compare(field1, field2, alerttxt) {
+	with (field1 && field2) {
+		if (r.test(field1.value) == true && r.test(field2.value) == true
+				&& (field1.value <= field2.value)) {
 			alert(alerttxt);
 			return false
 		} else {
@@ -86,11 +87,26 @@ function validate_form(thisform) {
 			drawPlayers.focus();
 			return false
 		}
-		if (compare(playernumbers,drawPlayers,
-		"Draw Player numbers can not be equal with or larger than player numbers") == false) {
-	drawPlayers.focus();
-	return false
-}
+		if (compare(playernumbers, drawPlayers,
+				"Draw Player numbers can not be equal with or larger than player numbers") == false) {
+			drawPlayers.focus();
+			return false
+		}
 	}
 
 }
+
+	
+	$(document).ready(function() {  
+		if((document.getElementById("wantpalyernumbers").value!=null)&& (document.getElementById("drawPlayers").value!=null))
+		{	
+//         setTimeout(function(){$('#myform').submit();},0); 
+         alert("Welcome to join in the game, it seems someone is waiting for you! \nPlease click 'Submit' buttton if you do not want to change the configuration numbers!");
+		}
+		else
+			{
+			alert("Welcome to join in the game, you are the first one,\nPlease fill in the configuratuon numbers!");
+			}
+    });  
+	
+	
