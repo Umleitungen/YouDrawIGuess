@@ -24,8 +24,6 @@ import javax.websocket.OnMessage;
 
 import org.w3c.dom.*;
 
-import com.sun.glass.ui.Application;
-
 import javax.xml.parsers.*;
 
 @ServerEndpoint("/Server")

@@ -15,9 +15,8 @@
 		Object wantpalyernumbers=application.getAttribute("wantpalyernumbers");
 		Object drawPlayers=application.getAttribute("drawPlayers");
 		%>
-		<input id="wantpalyernumbers" value="<%=wantpalyernumbers %>" style="display: none;"/>
-		<input id="drawPlayers" value="<%=drawPlayers %>"style="display: none;" />
-		
+		<input id="wantpalyernumbers1" value="<%=wantpalyernumbers %>" style="display: none;"/>
+		<input id="drawPlayers1" value="<%=drawPlayers %>"style="display: none;" />
 		<form action="myServer" method="post"
 			onsubmit="return validate_form(this)" id="myform" name="myform">
 			The numbers of players: <input type="text" name="playernumbers"

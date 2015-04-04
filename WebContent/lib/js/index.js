@@ -98,14 +98,14 @@ function validate_form(thisform) {
 
 	
 	$(document).ready(function() {  
-		if((document.getElementById("wantpalyernumbers").value!=null)&& (document.getElementById("drawPlayers").value!=null))
+		if((r.test(document.getElementById("wantpalyernumbers1").value) == false)&&(r.test(document.getElementById("drawPlayers1").value) == false))
 		{	
 //         setTimeout(function(){$('#myform').submit();},0); 
-         alert("Welcome to join in the game, it seems someone is waiting for you! \nPlease click 'Submit' buttton if you do not want to change the configuration numbers!");
+         alert("Welcome to join in the game, you are the first player!\nPlease fill in the configuratuon numbers!");
 		}
 		else
 			{
-			alert("Welcome to join in the game, you are the first one,\nPlease fill in the configuratuon numbers!");
+			alert("Welcome to join in the game, it seems someone is waiting for you! \nPlease click 'Submit' buttton if you do not want to change the configuration numbers!");
 			}
     });  
 	
